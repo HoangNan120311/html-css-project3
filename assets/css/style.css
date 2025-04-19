@@ -110,7 +110,6 @@ button {
   padding: 8px 21px;
   color: #c9d2da;
   font-size: 1.5rem;
-  font-style: normal;
   font-weight: 300;
   line-height: 1.75;
 }
@@ -693,7 +692,7 @@ button {
   background: #2e80ce;
   color: #fff;
 }
-.footet__social {
+.footer__social {
   margin: 20px 0 28px;
   display: flex;
   column-gap: 10px;
