@@ -92,8 +92,17 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- add reset -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
+    <!-- add responsive css -->
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+
+    <!-- add animate -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- add animation -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Shine Smile</title>
   </head>
   <body>
@@ -102,7 +111,11 @@
       <div class="container">
         <div class="header-top">
           <!-- logo -->
-          <img src="./assets/img/logo.svg" alt="shinesmile" class="logo" />
+          <img
+            src="./assets/img/logo.svg"
+            alt="shinesmile"
+            class="logo header__logo"
+          />
           <!-- navigation -->
           <nav class="navbar">
             <ul class="navbar__list">
@@ -164,6 +177,27 @@
       </div>
     </header>
 
+    <!-- Mobile & Tablet Header -->
+    <div class="mobile-header">
+      <!-- tablet/mobile menu -->
+      <input type="checkbox" name="menu-checkbox" id="menu-checkbox" hidden />
+      <label for="menu-checkbox">
+        <svg
+          class="menu-header__icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+          />
+        </svg>
+      </label>
+
+      <!-- overlay -->
+      <label for="menu-checkbox" class="menu-overlay"></label>
+    </div>
+
     <!-- Main -->
     <main>
       <!-- Our service -->
@@ -181,12 +215,6 @@
                 src="./assets/img/hero-1.jpg"
                 alt="Our service"
                 class="service__img"
-                data-aos="zoom-in-down"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                data-aos-anchor="#service__btn--id"
-                data-aos-once="false"
-                data-aos-mirror="true"
               />
             </figure>
             <!-- service right -->
@@ -267,9 +295,9 @@
                   </div>
                 </div>
               </section>
-              <a href="#!" class="btn service__btn" id="service__btn--id"
-                >All Services</a
-              >
+              <a href="#!" class="btn service__btn" id="service__btn--id">
+                All Services
+              </a>
             </div>
           </div>
         </div>
@@ -278,7 +306,9 @@
       <!-- Work -->
       <section class="work">
         <div class="container">
-          <h2 class="section-heading work__heading">How it works</h2>
+          <h2 class="section-heading work__heading" data-aos="animate__flipInX">
+            How it works
+          </h2>
           <p class="section-desc work__desc">
             Exceptional dental care for all ages. Your great smile begins with a
             great dentist.
@@ -372,14 +402,7 @@
       <section class="team">
         <div class="container">
           <div class="team-header">
-            <h2
-              class="section-heading team__heading"
-              data-aos="zoom-out-left"
-              data-aos-offset="400"
-              data-aos-duration="3000"
-            >
-              Our virtual dentist
-            </h2>
+            <h2 class="section-heading team__heading">Our virtual dentist</h2>
             <a href="#!" class="btn team__btn">Meet our dentist</a>
           </div>
           <!-- list -->
@@ -767,7 +790,11 @@
     <!-- JS ANIMATION -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({
+        useClassNames: true,
+        initClassName: false,
+        animatedClassName: "animate__animated",
+      });
     </script>
   </body>
 </html>

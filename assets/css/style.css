@@ -742,3 +742,17 @@ button {
   line-height: 1.86;
   padding: 28px 0 42px;
 }
+
+/* AOS */
+[data-aos] {
+  visibility: hidden;
+}
+[data-aos].animate__animated {
+  visibility: visible;
+}
+
+/* ===== Animation ===== */
+.work .section-heading {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
