@@ -1,5 +1,8 @@
 /* PC */
 @media (min-width: 992px) {
+  .mobile-header {
+    display: none;
+  }
 }
 
 /* Tablet & smartphone */
@@ -11,11 +14,14 @@
   /* 2. Đưa logo vào giữa */
   .header-top {
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   .header__logo {
     left: 50%;
     position: absolute;
-    /* translate: -50% -50%; */
+    translate: -50% -50%;
   }
   /* 3. Căn lại vị trí của menu icon */
   .menu-header__icon {
@@ -32,16 +38,50 @@
     position: fixed;
     background: rgba(0, 0, 0, 0.3);
     inset: 0;
-    /* z-index: 1; */
+    z-index: 1;
     /* Binh thuong thi an overlay di */
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
   }
   /* 5. Kiem tra xem menu-checkboc co duoc checked hay khong */
-  .menu-checkboc:checked ~ .menu-overlay {
+  .menu-checkbox:checked ~ .menu-overlay {
     opacity: 1;
     visibility: visible;
+  }
+  /* 6. Code cho menu drawer */
+  .menu-drawer {
+    position: fixed;
+    background: #2e1919;
+    inset: 0 40% 0 0;
+    z-index: 2;
+    transform: translateX(-100%);
+    padding: 60px;
+  }
+  /* 7. kiem tra neu meunu-checkbox co check thi hien menu */
+  .menu-checkbox:checked ~ .menu-drawer {
+    transform: translateX(0);
+  }
+  /* 8. menu top */
+  .close__menu {
+    width: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .menu-drawer__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #navbar__list--mobile {
+    margin-top: 25px;
+  }
+  .navbar__link {
+    display: block;
+    font-size: 2rem;
+  }
+  .navbar__link:hover {
+    background: #00ffff37;
   }
 }
 
